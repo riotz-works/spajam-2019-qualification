@@ -17,7 +17,7 @@ import TransitionMethods from '~/mixins/TransitionMethods'
 
 
 export default Vue.extend({
-  layout: 'news',
+  layout: 'top',
   mixins: [ TransitionMethods ],
 
 });

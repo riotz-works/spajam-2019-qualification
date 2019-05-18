@@ -1,0 +1,59 @@
+//
+html, body, #__nuxt, #__layout, #__layout > div {
+  height: 100%;
+}
+
+.x-debug-border {
+  border: 0.1rem solid #ff00ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bottom {
+  bottom: 0;
+  right: 0;
+  color: #1d1d1d;
+  overflow: hidden;
+  position: fixed;
+}
+
+.warning {
+  font-size: smaller;
+  background-color: rgba(255, 218, 185, 0.5) !important;
+}
+
+.wrap-app-top {
+  background-image: url('../image/wallpaper.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.wrap-app-top-pc {
+  background-image: url('../image/wallpaper.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.wrap-app-top-mask {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app-content {
+  height: 100vh;
+  overflow: auto;
+}
+
+.top-header-bg {
+  // background-image: url('../image/wallpaper.jpg');
+  background-size: cover;
+}
+
+.glo-header-bg {
+  // background-image: url('../image/wallpaper.jpg');
+  background-size: cover;
+}
