@@ -3,7 +3,8 @@ import Vue from "vue";
 export const State: { [key: string]: any } = Vue.observable({
   currentBottomNav: '',
 
-  currentUser: null,
+  firebaseUser: '',
+  coreApiUser: '',
   newsSources: [
     {
       title: '東京A予選真っ最中。テーマは「XXX」',

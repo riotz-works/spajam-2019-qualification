@@ -13,6 +13,7 @@ const config: NuxtConfiguration = {
     CORE_API: process.env.CORE_API || '',
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY || '',
     FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN || '',
+    APP_VERSION: pkg.version
   },
 
   router: {

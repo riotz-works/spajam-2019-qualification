@@ -39,9 +39,10 @@ a {
   background-attachment: fixed;
 }
 
+.wrap-app-mask,
 .wrap-app-top-mask {
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .app-content {
@@ -50,11 +51,13 @@ a {
 }
 
 .top-header-bg {
+  background-color: rgb(78, 43, 43) !important;
   // background-image: url('../image/wallpaper.jpg');
-  background-size: cover;
+  // background-size: cover;
 }
 
 .glo-header-bg {
+  background-color: rgb(78, 43, 43) !important;
   // background-image: url('../image/wallpaper.jpg');
-  background-size: cover;
+  // background-size: cover;
 }

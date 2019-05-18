@@ -20,6 +20,6 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .top-footer-bg {
-  background-color: #A03334;
+  background-color: rgb(78, 43, 43);
 }
 </style>
