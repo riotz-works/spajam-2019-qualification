@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@nuxt/typescript": "^2.7.1",
     "nuxt": "^2.7.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ts-node": "^8.1.0"
+  },
   "scripts": {
     "setup": "yarn install --ignore-optional",
     "dev": "nuxt",
