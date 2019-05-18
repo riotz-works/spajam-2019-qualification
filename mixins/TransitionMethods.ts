@@ -16,12 +16,13 @@ export default {
     },
 
     toMyNewsPage() {
-      State.globalBottomNav = 'orders'
+      State.currentBottomNav = 'my_news'
       // @ts-ignore
       this.$router.push({ path: '/my_news' })
     },
 
     toMachingNewsPage() {
+      State.currentBottomNav = 'matching_news'
       // @ts-ignore
       this.$router.push({ path: '/matching_news' })
     }

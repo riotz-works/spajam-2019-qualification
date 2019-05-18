@@ -52,6 +52,9 @@ const config: NuxtConfiguration = {
     [ '@nuxtjs/sitemap', {}],
     [ '@nuxtjs/vuetify', {}]
   ],
+  vuetify: {
+    //  theme: { }
+  },
 
   plugins: [
     { src: '~/plugins/firebase', ssr: false }
