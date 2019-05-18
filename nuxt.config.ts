@@ -14,8 +14,44 @@ const config: NuxtConfiguration = {
 
   loading: { color: '#fff' },
 
+  meta: {
+    ogHost: pkg.applicationHost
+  },
+
+  manifest: {
+    name: pkg.displayName,
+    short_name: pkg.displayShortName,
+    description: pkg.description,
+    display: 'fullscreen',
+    lang: 'ja',
+    scope: `/${pkg.name}/`,
+    theme_color: '#000',
+    background_color: '#000'
+  },
+
   head: {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : 'SPAJAM 2019 東京A予選'
+  },
+
+  modules: [
+    [ '@nuxtjs/pwa', {}]
+  ],
+
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://fonts.(?:googleapis|gstatic).com/(.*)',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [ 0, 200 ]}}
+      },
+      {
+        urlPattern: '\.(?:png|gif|jpg|jpeg|svg)$',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheExpiration: { maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 }}
+      }
+    ]
   }
 }
 
