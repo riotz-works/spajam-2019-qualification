@@ -1,4 +1,5 @@
 import NuxtConfiguration from '@nuxt/config'
+import * as axiosRetry from 'axios-retry';
 import pkg from './package.json'
 
 const config: NuxtConfiguration = {
@@ -34,9 +35,17 @@ const config: NuxtConfiguration = {
   },
 
   modules: [
+    [ '@nuxtjs/axios', {}],
     [ '@nuxtjs/pwa', {}],
     [ '@nuxtjs/sitemap', {}]
   ],
+
+  axios: {
+    retry: {
+      retries: 3,
+      retryDelay: axiosRetry.exponentialDelay
+    }
+  },
 
   sitemap: {
     hostname: `${pkg.applicationHost}/${pkg.name}`,
