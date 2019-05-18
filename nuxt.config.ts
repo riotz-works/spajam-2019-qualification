@@ -37,7 +37,8 @@ const config: NuxtConfiguration = {
   modules: [
     [ '@nuxtjs/axios', {}],
     [ '@nuxtjs/pwa', {}],
-    [ '@nuxtjs/sitemap', {}]
+    [ '@nuxtjs/sitemap', {}],
+    [ '@nuxtjs/vuetify' ]
   ],
 
   axios: {
