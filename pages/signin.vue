@@ -32,7 +32,6 @@ import firebase from '~/plugins/firebase'
 
 import State from "~/store/store";
 
-
 export default Vue.extend({
 
   data: () => ({
