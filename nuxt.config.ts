@@ -10,6 +10,7 @@ const config: NuxtConfiguration = {
   },
 
   env: {
+    CORE_API: process.env.CORE_API || '',
     FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || '',
     FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || '',
     TWITTER_API_KEY: process.env.TWITTER_API_KEY || '',
