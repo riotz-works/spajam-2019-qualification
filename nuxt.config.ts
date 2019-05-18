@@ -34,6 +34,10 @@ const config: NuxtConfiguration = {
     titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : 'SPAJAM 2019 東京A予選'
   },
 
+  css: [
+    '@/assets/css/main.scss'
+  ],
+
   modules: [
     [ '@nuxtjs/axios', {}],
     [ '@nuxtjs/pwa', {}],
