@@ -1,7 +1,16 @@
 import NuxtConfiguration from '@nuxt/config'
+import pkg from './package.json'
 
 const config: NuxtConfiguration = {
   mode: 'spa',
+
+  build: {
+    publicPath: '/static/'
+  },
+
+  router: {
+    base: `/${ pkg.name }/`
+  },
 
   loading: { color: '#fff' },
 

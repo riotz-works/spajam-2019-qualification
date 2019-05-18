@@ -15,7 +15,8 @@
     "setup": "yarn install --ignore-optional",
     "dev": "nuxt",
     "build": "nuxt build",
-    "analyze": "nuxt build --analyze"
+    "analyze": "nuxt build --analyze",
+    "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'"
   },
   "author": "Riotz Works (https://riotz.works)",
   "license": "MIT"
