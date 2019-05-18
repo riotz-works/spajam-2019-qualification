@@ -46,7 +46,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import State from "~/store/store";
+import { State } from "~/store/store";
 
 export default Vue.extend({
 

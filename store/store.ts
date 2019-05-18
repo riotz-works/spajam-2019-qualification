@@ -1,6 +1,7 @@
 import Vue from "vue";
 
-const State: { [key: string]: any } = Vue.observable({
+export const State: { [key: string]: any } = Vue.observable({
+  currentBottomNav: '',
 
   currentUser: null,
   newsSources: [
@@ -15,5 +16,3 @@ const State: { [key: string]: any } = Vue.observable({
   ]
 
 });
-
-export default State

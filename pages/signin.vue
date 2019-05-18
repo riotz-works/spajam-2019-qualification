@@ -16,7 +16,13 @@
         <v-btn @click="signout">Signout</v-btn>
 
         <p>User Display Name: {{ userDisplayName }}</p>
-        
+
+        <v-btn @click="toMyNewsPage">My News</v-btn>
+
+        <br />
+
+        <v-btn @click="toMachingNewsPage">Matching News</v-btn>
+
       </v-flex>
     </v-layout>
   </v-container>
@@ -27,10 +33,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
+import TransitionMethods from '~/mixins/TransitionMethods'
 import firebase from '~/plugins/firebase'
 
-import State from "~/store/store";
+
+import { State } from "~/store/store";
 
 export default Vue.extend({
 
@@ -62,6 +69,8 @@ export default Vue.extend({
       });
     }
   },
+
+  mixins: [ TransitionMethods ],
 
   mounted() {
     if (!firebase.auth().currentUser) {
