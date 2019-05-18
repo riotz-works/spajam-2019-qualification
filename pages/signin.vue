@@ -16,7 +16,7 @@
         <v-btn @click="signout">Signout</v-btn>
 
         <p>User Display Name: {{ userDisplayName }}</p>
-        
+
       </v-flex>
     </v-layout>
   </v-container>
@@ -27,10 +27,10 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
+import coreApi from '~/plugins/core-api';
 import firebase from '~/plugins/firebase'
-
 import State from "~/store/store";
+
 
 export default Vue.extend({
 
@@ -42,7 +42,7 @@ export default Vue.extend({
 
     debug() {
     },
-    
+
     signinFacebook() {
       const provider = new firebase.auth.FacebookAuthProvider();
       firebase.auth().signInWithRedirect(provider);
@@ -77,6 +77,15 @@ export default Vue.extend({
         if (currentUser && currentUser.displayName) {
           State.currentUser = currentUser
           this.userDisplayName = currentUser.displayName
+          console.log(result)
+          coreApi.post('/signup', {
+            id: result.credential.providerId,
+            userId: result.user.uid,
+            token: {
+              access:  result.credential.accessToken,
+              refresh: result.credential.refreshToken
+            }
+          });
         } else {
           this.userDisplayName = 'Not signed in'
         }
@@ -92,4 +101,3 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 </style>
-\
