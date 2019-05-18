@@ -82,6 +82,7 @@ export default Vue.extend({
     },
 
     signupCoreApi(getRedirectResult: any) {
+      State.twitterUserName = getRedirectResult.additionalUserInfo.profile.screen_name
       coreApi.post('/signup', {
         id     : getRedirectResult.credential.providerId,
         userId : getRedirectResult.user.uid,

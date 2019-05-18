@@ -5,6 +5,7 @@ export const State: { [key: string]: any } = Vue.observable({
 
   firebaseUser: '',
   coreApiUser: '',
+  twitterUserName: '',
   newsSources: [
     {
       title: '東京A予選真っ最中。テーマは「NEWS」',

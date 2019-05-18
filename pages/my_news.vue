@@ -49,7 +49,7 @@ import Vue from 'vue'
 
 // import TransitionMethods from '~/mixins/TransitionMethods'
 
-// import coreApi  from '~/plugins/core-api';
+import coreApi  from '~/plugins/core-api';
 // import firebase from '~/plugins/firebase'
 
 import { State } from "~/store/store";
@@ -62,8 +62,16 @@ export default Vue.extend({
     userName: () =>  State.firebaseUser.displayName
   },
 
-  data: () => ({
-  }),
+  data: () => ({}),
+
+  mounted() {
+    coreApi.get(`/dev/tweets/${State.twitterUserName}`).then((res: any) => {
+      console.log(res)
+    })
+  }
+
+
+
 });
 </script>
 
