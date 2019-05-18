@@ -40,6 +40,7 @@ const config: NuxtConfiguration = {
 
   modules: [
     [ '@nuxtjs/axios', {}],
+    [ '@nuxtjs/dotenv', {}],
     [ '@nuxtjs/pwa', {}],
     [ '@nuxtjs/sitemap', {}],
     [ '@nuxtjs/vuetify', {}]
