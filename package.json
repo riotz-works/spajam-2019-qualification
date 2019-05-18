@@ -1,5 +1,6 @@
 {
   "name": "spajam-2019-qualification",
+  "displayName": "SPAJAM 2019 東京A予選",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
