@@ -68,11 +68,13 @@ workflows:
   build-deploy-flow:
     jobs:
       - build:
+          context: spajam-2019-qualification
           filters:
             branches:
               ignore:
                 - master
       - deploy:
+          context: spajam-2019-qualification
           requires:
             - build
           filters:

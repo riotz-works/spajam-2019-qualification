@@ -9,6 +9,14 @@ const config: NuxtConfiguration = {
     publicPath: '/static/'
   },
 
+  env: {
+    CORE_API: process.env.CORE_API || '',
+    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || '',
+    FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || '',
+    TWITTER_API_KEY: process.env.TWITTER_API_KEY || '',
+    TWITTER_SECRET_KEY: process.env.TWITTER_SECRET_KEY  || ''
+  },
+
   router: {
     base: `/${ pkg.name }/`
   },
