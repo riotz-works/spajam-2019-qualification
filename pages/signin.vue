@@ -65,22 +65,27 @@ export default Vue.extend({
   },
 
   mounted() {
-    firebase.auth().getRedirectResult().then((result: any) => {
-      if (result.credential) {
-        // const token = result.credential.accessToken;
-      }
+    if (!firebase.auth().currentUser) {
+      firebase.auth().getRedirectResult().then((result: any) => {
+        if (result.credential) {
+          // const token = result.credential.accessToken;
+        }
 
-      const currentUser = firebase.auth().currentUser
-      if (currentUser && currentUser.displayName) {
-        State.currentUser = currentUser
-        this.userDisplayName = currentUser.displayName
-      } else {
-        this.userDisplayName = 'Not signed in'
-      }
-    }).catch((err) => {
-      console.log('getRedirectResult failed.', err)
-      this.userDisplayName = 'Failed'
-    })
+        console.log('redirect ok')
+        console.log(result)
+
+        const currentUser = firebase.auth().currentUser
+        if (currentUser && currentUser.displayName) {
+          State.currentUser = currentUser
+          this.userDisplayName = currentUser.displayName
+        } else {
+          this.userDisplayName = 'Not signed in'
+        }
+      }).catch((err) => {
+        console.log('getRedirectResult failed.', err)
+        this.userDisplayName = 'Failed'
+      })
+    }
   }
 });
 </script>
