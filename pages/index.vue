@@ -85,6 +85,7 @@ export default Vue.extend({
       coreApi.post('/signup', {
         id     : getRedirectResult.credential.providerId,
         userId : getRedirectResult.user.uid,
+        username: getRedirectResult.additionalUserInfo.profile.screen_name,
         token  : {
           access : getRedirectResult.credential.accessToken,
           refresh: getRedirectResult.credential.refreshToken
