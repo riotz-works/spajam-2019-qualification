@@ -3,7 +3,10 @@
 
     <v-container>
       <v-layout wrap>
-        <v-flex xs12>
+        <v-flex xs12 text-xs-center>
+          <v-btn fab dark large color="pink">
+            <v-icon dark>favorite</v-icon>
+          </v-btn>
         </v-flex>
       </v-layout>
     </v-container>
