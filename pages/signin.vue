@@ -43,22 +43,13 @@ export default Vue.extend({
     
     signinFacebook() {
 
-      //@ts-ignore
-      console.log('firebase instance', firebase)
-      firebase.auth().languageCode = 'ja_JP';
       const provider = new firebase.auth.FacebookAuthProvider();
-
       firebase.auth().signInWithRedirect(provider);
     },
 
     signinTwitter() {
-      firebase.auth().languageCode = 'ja_JP';
       const provider = new firebase.auth.TwitterAuthProvider();
-
-      provider.setCustomParameters({
-        'lang': 'ja'
-      });
-
+      // provider.setCustomParameters({ 'lang': 'ja' });
       firebase.auth().signInWithRedirect(provider);
 
     },
@@ -66,8 +57,8 @@ export default Vue.extend({
     signout() {
       firebase.auth().signOut().then(function() {
         console.log('Sign-out successful')
-      }).catch(function(error) {
-        console.log(error)
+      }).catch(function(err) {
+        console.log('Sign-out failed', err)
       });
     }
   },
@@ -81,12 +72,10 @@ export default Vue.extend({
       }
       // The signed-in user info.
       const currentUser = firebase.auth().currentUser
-      console.log('result', currentUser)
       console.log('currentUser', currentUser)
       this.userDisplayName = firebase.auth().currentUser!.displayName!
-
     }).catch((err) => {
-      console.log(err)
+      console.log('getRedirectResult failed.', err)
     })
   }
 });

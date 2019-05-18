@@ -6,6 +6,8 @@ import firebase from 'firebase'
   };
 
   firebase.initializeApp(config);
+  firebase.auth().languageCode = 'ja_JP';
+
 
 export default firebase;
 
