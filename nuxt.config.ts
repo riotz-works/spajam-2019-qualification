@@ -34,8 +34,15 @@ const config: NuxtConfiguration = {
   },
 
   modules: [
-    [ '@nuxtjs/pwa', {}]
+    [ '@nuxtjs/pwa', {}],
+    [ '@nuxtjs/sitemap', {}]
   ],
+
+  sitemap: {
+    hostname: `${pkg.applicationHost}/${pkg.name}`,
+    gzip: true,
+    generate: true
+  },
 
   workbox: {
     runtimeCaching: [
