@@ -46,6 +46,10 @@ const config: NuxtConfiguration = {
     [ '@nuxtjs/vuetify', {}]
   ],
 
+  plugins: [
+    { src: '~/plugins/firebase', ssr: false }
+  ],
+
   axios: {
     retry: {
       retries: 3,

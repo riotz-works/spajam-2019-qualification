@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "@nuxt/typescript": "^2.7.1",
+    "firebase": "^6.0.2",
     "nuxt": "^2.7.1"
   },
   "devDependencies": {
