@@ -7,7 +7,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "setup": "yarn install --ignore-optional"
+    "setup": "yarn install --ignore-optional",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "analyze": "nuxt build --analyze"
   },
   "author": "Riotz Works (https://riotz.works)",
   "license": "MIT"
