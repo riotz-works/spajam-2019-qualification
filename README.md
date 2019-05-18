@@ -1,1 +1,0 @@
-# spajam-2019-qualification
