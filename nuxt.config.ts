@@ -11,8 +11,13 @@ const config: NuxtConfiguration = {
 
   env: {
     CORE_API: process.env.CORE_API || '',
+
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY || '',
+    FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN || '',
+
     FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || '',
     FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || '',
+
     TWITTER_API_KEY: process.env.TWITTER_API_KEY || '',
     TWITTER_SECRET_KEY: process.env.TWITTER_SECRET_KEY  || ''
   },

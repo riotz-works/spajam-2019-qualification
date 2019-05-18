@@ -28,8 +28,6 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Constants from '~/mixins/Constants'
-
 import firebase from '~/plugins/firebase'
 
 export default Vue.extend({
@@ -41,8 +39,6 @@ export default Vue.extend({
   methods: {
 
     debug() {
-      //@ts-ignore
-      console.log(this.Constants.Test)
     },
     
     signinFacebook() {
@@ -75,10 +71,6 @@ export default Vue.extend({
       });
     }
   },
-
-  mixins: [
-    Constants
-  ],
 
   mounted() {
     firebase.auth().getRedirectResult().then((result: any) => {
