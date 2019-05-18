@@ -30,6 +30,9 @@ import Vue from 'vue'
 
 import firebase from '~/plugins/firebase'
 
+import State from "~/store/store";
+
+
 export default Vue.extend({
 
   data: () => ({
@@ -69,6 +72,7 @@ export default Vue.extend({
 
       const currentUser = firebase.auth().currentUser
       if (currentUser && currentUser.displayName) {
+        State.currentUser = currentUser
         this.userDisplayName = currentUser.displayName
       } else {
         this.userDisplayName = 'Not signed in'
