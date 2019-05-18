@@ -33,7 +33,7 @@ import firebase from '~/plugins/firebase'
 export default Vue.extend({
 
   data: () => ({
-    userDisplayName: 'loading'
+    userDisplayName: 'loading...'
   }),
 
   methods: {
@@ -66,7 +66,13 @@ export default Vue.extend({
       if (result.credential) {
         // const token = result.credential.accessToken;
       }
-      this.userDisplayName = firebase.auth().currentUser!.displayName!
+
+      const currentUser = firebase.auth().currentUser
+      if (currentUser && currentUser.displayName) {
+        this.userDisplayName = currentUser.displayName
+      } else {
+        this.userDisplayName = 'Not signed in or failed'
+      }
     }).catch((err) => {
       console.log('getRedirectResult failed.', err)
     })
