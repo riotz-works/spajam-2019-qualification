@@ -46,6 +46,8 @@ export default Vue.extend({
     userDisplayName: 'loading...'
   }),
 
+  layout: 'top',
+
   methods: {
 
     debug() {
