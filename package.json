@@ -2,7 +2,9 @@
   "name": "spajam-2019-qualification",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "nuxt": "^2.7.1"
+  },
   "devDependencies": {},
   "scripts": {
     "setup": "yarn install --ignore-optional"
