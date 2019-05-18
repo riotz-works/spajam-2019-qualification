@@ -42,14 +42,12 @@ export default Vue.extend({
     },
     
     signinFacebook() {
-
       const provider = new firebase.auth.FacebookAuthProvider();
       firebase.auth().signInWithRedirect(provider);
     },
 
     signinTwitter() {
       const provider = new firebase.auth.TwitterAuthProvider();
-      // provider.setCustomParameters({ 'lang': 'ja' });
       firebase.auth().signInWithRedirect(provider);
 
     },
@@ -66,13 +64,8 @@ export default Vue.extend({
   mounted() {
     firebase.auth().getRedirectResult().then((result: any) => {
       if (result.credential) {
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         // const token = result.credential.accessToken;
-        // ...
       }
-      // The signed-in user info.
-      const currentUser = firebase.auth().currentUser
-      console.log('currentUser', currentUser)
       this.userDisplayName = firebase.auth().currentUser!.displayName!
     }).catch((err) => {
       console.log('getRedirectResult failed.', err)
