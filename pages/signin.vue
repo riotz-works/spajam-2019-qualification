@@ -71,10 +71,11 @@ export default Vue.extend({
       if (currentUser && currentUser.displayName) {
         this.userDisplayName = currentUser.displayName
       } else {
-        this.userDisplayName = 'Not signed in or failed'
+        this.userDisplayName = 'Not signed in'
       }
     }).catch((err) => {
       console.log('getRedirectResult failed.', err)
+      this.userDisplayName = 'Failed'
     })
   }
 });
