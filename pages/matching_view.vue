@@ -41,7 +41,7 @@ import Vue from 'vue'
 
 // import TransitionMethods from '~/mixins/TransitionMethods'
 
-// import coreApi  from '~/plugins/core-api';
+import coreApi  from '~/plugins/core-api';
 // import firebase from '~/plugins/firebase'
 
 import { State } from "~/store/store";
@@ -56,7 +56,43 @@ export default Vue.extend({
 
   data: () => ({}),
 
+  created() {
+
+    State.currentBottomNav = 'matching_news'
+
+  },
+
   mounted() {
+    console.log('get my news')
+    coreApi.get(`/tweets/lulzneko`).then((res: any) => {
+      res.data.forEach((rawNewsSource: any) => {
+        if (rawNewsSource.text.includes('SPAJAM')
+          || rawNewsSource.text.includes('アプリ')) {
+            const imageUrl = rawNewsSource.entities && rawNewsSource.entities.media && rawNewsSource.entities.media.length > 0 && rawNewsSource.entities.media[0].type === 'photo' ? rawNewsSource.entities.media[0].media_url : undefined
+            State.matchingSources.push({
+              text: rawNewsSource.text,
+              newsSourceId: rawNewsSource.tweetId,
+              imageUrl
+            })
+          }
+      })
+      console.log(res)
+    })
+    .then(() => {
+      coreApi.get(`/tweets/lopburny`).then((res: any) => {
+        res.data.forEach((rawNewsSource: any) => {
+          if (rawNewsSource.text.includes('SPAJAM')
+            || rawNewsSource.text.includes('アプリ')) {
+              const imageUrl = rawNewsSource.entities && rawNewsSource.entities.media && rawNewsSource.entities.media.length > 0 && rawNewsSource.entities.media[0].type === 'photo' ? rawNewsSource.entities.media[0].media_url : undefined
+              State.matchingSources.push({
+                text: rawNewsSource.text,
+                newsSourceId: rawNewsSource.tweetId,
+                imageUrl
+              })
+            }
+        })
+      })
+    })
 
   }
 
