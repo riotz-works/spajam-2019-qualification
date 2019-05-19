@@ -7,7 +7,7 @@
           <v-btn fab dark large color="pink" @click="onPush">
             <v-icon dark>favorite</v-icon>
           </v-btn>
-          <span>Push</span>
+          <span>ニュース</span>
         </v-flex>
         <v-flex xs6 text-xs-center>
           <v-btn fab dark large color="green" @click="onWatch">
@@ -119,7 +119,8 @@ export default Vue.extend({
     onPush() {
       this.nfcDialog = true
 
-      if ((navigator as any).nfc) {
+      // @ts-ignore
+      if (navigator.nfc) {
         (navigator as any).nfc.push({ data: 'test'}).then(() => this.nfcDialog = false)
       }
     },
@@ -127,7 +128,8 @@ export default Vue.extend({
     onWatch() {
       this.nfcDialog = true
 
-      if ((navigator as any).nfc) {
+      // @ts-ignore
+      if (navigator.nfc) {
         (navigator as any).nfc.watch((msg: any) => this.watchMessage = msg).then(() => this.nfcDialog = false)
       }
     }
