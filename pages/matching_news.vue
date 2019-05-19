@@ -133,7 +133,7 @@ export default Vue.extend({
   },
 
   mounted() {
-    if ('nfc' in navigator) {
+    if (!(navigator as any).nfc) {
       //
     } else {
       this.nfcUnsupported = true
