@@ -38,7 +38,7 @@ const config: NuxtConfiguration = {
   },
 
   head: {
-    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : 'SPAJAM 2019 東京A予選'
+    titleTemplate: (titleChunk) => titleChunk ? `${titleChunk} | ${require('~/package.json').displayName}` : '📰NEWʑ Link'
   },
 
   css: [
