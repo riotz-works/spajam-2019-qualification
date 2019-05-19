@@ -3,10 +3,17 @@
 
     <v-container>
       <v-layout wrap>
-        <v-flex xs12 text-xs-center>
+        <v-flex xs6 text-xs-center>
           <v-btn fab dark large color="pink">
             <v-icon dark>favorite</v-icon>
           </v-btn>
+          <span>Push</span>
+        </v-flex>
+        <v-flex xs6 text-xs-center>
+          <v-btn fab dark large color="green">
+            <v-icon dark>favorite</v-icon>
+          </v-btn>
+          <span>Watch</span>
         </v-flex>
       </v-layout>
     </v-container>

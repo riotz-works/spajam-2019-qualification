@@ -33,7 +33,7 @@ const config: NuxtConfiguration = {
     display: 'fullscreen',
     lang: 'ja',
     scope: `/${pkg.name}/`,
-    theme_color: '#000',
+    theme_color: '#4e2b2b',
     background_color: '#000'
   },
 

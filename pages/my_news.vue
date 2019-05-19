@@ -1,14 +1,14 @@
 <template>
   <section>
-    <v-container>
-      <v-layout wrap>
+    <v-container class="mb-5">
+      <!-- <v-layout wrap>
         <v-flex xs12>
 
           <p>User ID: {{ userId }}</p>
           <p>User name: {{ userName }}</p>
 
         </v-flex>
-      </v-layout>
+      </v-layout> -->
 
       <v-layout wrap>
         <v-flex xs12>
@@ -30,6 +30,8 @@
               </v-icon>
               <span class="font-weight-light">{{ item.title }}</span>
             </v-card-title>
+
+            <v-img v-if="item.imageUrl" :src="item.imageUrl"></v-img>
 
             <v-card-text class="subheadline font-weight-bold">
               {{ item.text }}
@@ -65,9 +67,20 @@ export default Vue.extend({
   data: () => ({}),
 
   mounted() {
-    coreApi.get(`/dev/tweets/${State.twitterUserName}`).then((res: any) => {
-      console.log(res)
-    })
+    if (State.twitterUserName && State.twitterUserName.length > 0) {
+      console.log('get my news')
+      coreApi.get(`/tweets/${State.twitterUserName}`).then((res: any) => {
+        res.data.forEach((rawNewsSource: any) => {
+          const imageUrl = rawNewsSource.media && rawNewsSource.media.length > 0 && rawNewsSource.media[0].type === 'photo' ? rawNewsSource.media[0].media_url : undefined
+          State.newsSources.push({
+            text: rawNewsSource.text,
+            newsSourceId: rawNewsSource.tweetId,
+            imageUrl
+          })
+        })
+        console.log(res)
+      })
+    }
   }
 
 
