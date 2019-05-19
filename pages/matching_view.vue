@@ -66,6 +66,12 @@ export default Vue.extend({
     console.log('get my news')
     coreApi.get(`/tweets/lulzneko`).then((res: any) => {
       res.data.forEach((rawNewsSource: any) => {
+
+        const duplicated = State.matchingSources.filter((s: any) => s.text === rawNewsSource.text)
+        if (duplicated.length > 0) {
+          return;
+        }
+
         if (rawNewsSource.text.includes('SPAJAM')
           || rawNewsSource.text.includes('アプリ')) {
             const imageUrl = rawNewsSource.entities && rawNewsSource.entities.media && rawNewsSource.entities.media.length > 0 && rawNewsSource.entities.media[0].type === 'photo' ? rawNewsSource.entities.media[0].media_url : undefined
@@ -82,6 +88,13 @@ export default Vue.extend({
     .then(() => {
       coreApi.get(`/tweets/lopburny`).then((res: any) => {
         res.data.forEach((rawNewsSource: any) => {
+
+          const duplicated = State.matchingSources.filter((s: any) => s.text === rawNewsSource.text)
+          if (duplicated.length > 0) {
+            return;
+          }
+
+
           if (rawNewsSource.text.includes('SPAJAM')
             || rawNewsSource.text.includes('アプリ')) {
               const imageUrl = rawNewsSource.entities && rawNewsSource.entities.media && rawNewsSource.entities.media.length > 0 && rawNewsSource.entities.media[0].type === 'photo' ? rawNewsSource.entities.media[0].media_url : undefined

@@ -56,7 +56,7 @@
          <v-btn
             color="primary"
             flat
-            @click="nfcDialog = false"
+            @click="matching = false"
           >
             閉じる
           </v-btn>
