@@ -24,7 +24,7 @@
             <v-img v-if="item.imageUrl" :src="item.imageUrl"></v-img>
 
             <v-card-text class="subheadline font-weight-bold">
-              {{ item.text }}
+              {{ item.text }} ({{ item.author }})
             </v-card-text>
           </v-card>
 
@@ -72,7 +72,8 @@ export default Vue.extend({
             State.matchingSources.push({
               text: rawNewsSource.text,
               newsSourceId: rawNewsSource.tweetId,
-              imageUrl
+              imageUrl,
+              author: 'lulzneko'
             })
           }
       })
@@ -87,7 +88,8 @@ export default Vue.extend({
               State.matchingSources.push({
                 text: rawNewsSource.text,
                 newsSourceId: rawNewsSource.tweetId,
-                imageUrl
+                imageUrl,
+                author: 'lopburny'
               })
             }
         })
