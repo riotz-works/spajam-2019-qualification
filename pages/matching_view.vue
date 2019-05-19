@@ -32,8 +32,8 @@
                 align-center
                 justify-end
               >
-                <v-btn icon outline class="mr-1"><v-icon>shop</v-icon></v-btn>
-                <v-btn icon outline class="mr-1"><v-icon>attach_money</v-icon></v-btn>
+                <v-btn icon outline class="mr-1" href="https://www.amazon.jp/hz/wishlist/ls/2NL4AB9HBSXWN?ref_=wl_share"><v-icon>shop</v-icon></v-btn>
+                <a href="http://twitter.com/share?text=@tipmona%20tip%20@john_iwaku%200.011874%20MONA%e3%82%92%e8%b4%88%e3%82%8a%e3%81%be%e3%81%99%20%0d%0a%e3%82%b3%e3%83%a1%e3%83%b3%e3%83%88%3a"><img src="~/assets/image/monacoin.png" width="120"></a>
               </v-layout>
             </v-card-actions>
           </v-card>
@@ -69,6 +69,10 @@ export default Vue.extend({
   created() {
 
     State.currentBottomNav = 'matching_news'
+
+  },
+
+  methods: {
 
   },
 
