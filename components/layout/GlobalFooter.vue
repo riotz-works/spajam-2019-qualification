@@ -43,18 +43,6 @@
             v-model="signoutDialog"
             width="500"
           >
-            <template v-slot:activator="{ on }">
-              <!-- <v-btn
-                color="red darken-4"
-                flat
-                value="signout"
-                @click="toContactPage"
-              >
-                <span>サインアウト</span>
-                <v-icon>exit_to_app</v-icon>
-              </v-btn> -->
-          </template>
-
             <v-card>
               <v-card-title
                 class="headline grey lighten-2"

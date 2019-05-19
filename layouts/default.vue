@@ -3,7 +3,7 @@
     <div class="wrap-app">
       <div class="wrap-app-mask">
 
-        <!-- <global-header /> -->
+        <global-header />
 
         <v-content class="app-content">
           <nuxt />

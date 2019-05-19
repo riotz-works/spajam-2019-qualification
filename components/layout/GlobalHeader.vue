@@ -1,7 +1,8 @@
 <template>
-  <v-toolbar app flat dark color="black" height="40" class="top-header-bg">
-    <div class="top-header-logo-wrap">
-      <!-- <img src="~/assets/img/logo_enji.png" class="top-header-logo"> -->
+  <v-toolbar app flat dark color="black" class="top-header-bg">
+    <div class="glo-header-logo-wrap">
+      <!-- SPAJAM2019 / 目の前の人とニュースで仲良くなるアプリ -->
+      <img src="~/assets/image/logo.png" class="glo-header-logo">
     </div>
   </v-toolbar>
 </template>
