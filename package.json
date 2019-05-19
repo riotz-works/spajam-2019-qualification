@@ -1,8 +1,8 @@
 {
   "name": "spajam-2019-qualification",
-  "displayName": "SPAJAM 2019 東京A予選",
-  "displayShortName": "SPAJAM",
-  "description": "SPAJAM 2019 東京A予選 で作成した作品",
+  "displayName": "📰NEWʑ Link",
+  "displayShortName": "📰NEWʑ Link",
+  "description": "パーソナルニュースの配信と交換によって爆速で仲良くなるアプリ",
   "applicationHost": "https://riotz.works",
   "version": "0.0.1",
   "private": true,
@@ -32,6 +32,6 @@
     "analyze": "nuxt build --analyze",
     "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'"
   },
-  "author": "Riotz Works (https://riotz.works)",
+  "author": "Riotz.works (https://riotz.works)",
   "license": "MIT"
 }
