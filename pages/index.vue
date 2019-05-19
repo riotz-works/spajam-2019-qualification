@@ -27,8 +27,9 @@
           </v-btn>
           <v-btn
             block
-            class="mt-4 mb-4 top-button-transparent"
-            dark
+            class="mt-4 mb-4"
+            light
+            disabled
             @click="signinFacebook"
           >
             Facebookでサインインする
@@ -139,7 +140,7 @@ section {
 
 .top-button-transparent {
   background-color: rgb(78, 43, 43) !important;
-  opacity: 0.9;
+  // opacity: 0.7;
 }
 
 .x-v-alert-info {
