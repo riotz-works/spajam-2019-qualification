@@ -26,6 +26,16 @@
             <v-card-text class="subheadline font-weight-bold">
               {{ item.text }} ({{ item.author }})
             </v-card-text>
+
+            <v-card-actions>
+              <v-layout
+                align-center
+                justify-end
+              >
+                <v-btn icon outline class="mr-1"><v-icon>shop</v-icon></v-btn>
+                <v-btn icon outline class="mr-1"><v-icon>attach_money</v-icon></v-btn>
+              </v-layout>
+            </v-card-actions>
           </v-card>
 
         </v-flex>
