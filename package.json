@@ -4,7 +4,7 @@
   "displayShortName": "📰NEWʑ Link",
   "description": "パーソナルニュースの配信と交換によって爆速で仲良くなるアプリ",
   "applicationHost": "https://riotz.works",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
     "@mdi/font": "^3.6.95",
