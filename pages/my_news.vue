@@ -1,18 +1,8 @@
 <template>
   <section>
     <v-container class="mb-5">
-      <!-- <v-layout wrap>
-        <v-flex xs12>
-
-          <p>User ID: {{ userId }}</p>
-          <p>User name: {{ userName }}</p>
-
-        </v-flex>
-      </v-layout> -->
-
       <v-layout wrap>
         <v-flex xs12>
-
           <v-card
             class="mx-auto my-3"
             color="#26c6da"
