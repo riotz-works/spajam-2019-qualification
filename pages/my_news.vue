@@ -61,7 +61,7 @@ export default Vue.extend({
       console.log('get my news')
       coreApi.get(`/tweets/${State.twitterUserName}`).then((res: any) => {
         res.data.forEach((rawNewsSource: any) => {
-          const imageUrl = rawNewsSource.media && rawNewsSource.media.length > 0 && rawNewsSource.media[0].type === 'photo' ? rawNewsSource.media[0].media_url : undefined
+          const imageUrl = rawNewsSource.entities && rawNewsSource.entities.media && rawNewsSource.entities.media.length > 0 && rawNewsSource.entities.media[0].type === 'photo' ? rawNewsSource.entities.media[0].media_url : undefined
           State.newsSources.push({
             text: rawNewsSource.text,
             newsSourceId: rawNewsSource.tweetId,
