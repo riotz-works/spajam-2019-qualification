@@ -4,7 +4,7 @@
   "displayShortName": "SPAJAM",
   "description": "SPAJAM 2019 東京A予選 で作成した作品",
   "applicationHost": "https://riotz.works",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "@mdi/font": "^3.6.95",

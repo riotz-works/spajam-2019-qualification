@@ -126,6 +126,7 @@ export default Vue.extend({
 
     onWatch() {
       this.nfcDialog = true
+
       if ((navigator as any).nfc) {
         (navigator as any).nfc.watch((msg: any) => this.watchMessage = msg).then(() => this.nfcDialog = false)
       }
@@ -133,7 +134,8 @@ export default Vue.extend({
   },
 
   mounted() {
-    if (!(navigator as any).nfc) {
+    // @ts-ignore
+    if (!navigator.nfc) {
       //
     } else {
       this.nfcUnsupported = true
