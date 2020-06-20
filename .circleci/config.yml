@@ -22,8 +22,7 @@ commands:
 
 jobs:
   setup:
-    executor:
-      name: default
+    executor: default
     steps:
       - run:
           name: System information
@@ -45,8 +44,7 @@ jobs:
             - ~/.cache/yarn
       - persist
   build:
-    executor:
-      name: default
+    executor: default
     steps:
       - attach
       - run:
@@ -57,8 +55,7 @@ jobs:
           path: dist
       - persist
   deploy:
-    executor:
-      name: default
+    executor: default
     steps:
       - attach
       - add_ssh_keys:
