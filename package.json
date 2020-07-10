@@ -12,7 +12,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",
-    "deploy": "gh-pages -d dist -b master -m 'Update Site [ci skip]'"
+    "deploy": "gh-pages -t -d dist -b master -m 'Update Site [ci skip]'"
   },
   "dependencies": {
     "@mdi/font": "^3.6.95",
